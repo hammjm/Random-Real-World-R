@@ -10,7 +10,7 @@
 
 # A recursive solution to permutating a number
 
-permutation <- function(x, na.rm = TRUE) {
+permutation <- function(x, na.rm = T) {
   if (x == 0) return(1)
   else if (!is.numeric(x)) return('Please input a number!')
   else return (x * permutation(x-1))
@@ -18,7 +18,7 @@ permutation <- function(x, na.rm = TRUE) {
 
 # A recursive solution for combinations
 
-combination <- function(n, r) {
+combination <- function(n, r, na.rm = T) {
   if (r == 0 | r == n) return(1)
   else if (!is.numeric(r) | !is.numeric(n)) return('Please input a number!')
   else return (combination(n-1, r-1) + combination(n-1, r))
