@@ -6,7 +6,7 @@ my_sum <- function(x) {
   for (i in x) {
     mysum <- mysum + i
   }
-  print(mysum)
+  return(mysum)
 }
 
 # Custom maximum function
@@ -18,7 +18,7 @@ my_max <- function(x) {
     else (maxvalue <- i)
       
   }
-  print(maxvalue)
+  return(maxvalue)
 }
 
 # Custom min function
@@ -30,21 +30,16 @@ my_min <- function(x) {
     else (minvalue <- i)
     
   }
-  print(minvalue)
+  return(minvalue)
 }
 
 
 # Mean
 my_mean <- function(x) {
-  
-  print('Calculating Sum...')
   numer <- my_sum(x)
   denom <- length(x)
-  
-  print('Calculating Mean...')
   mymean <- numer/denom
-  print(mymean)
-  
+  return(mymean)
 }
 
 # Median
@@ -52,9 +47,12 @@ my_median <- function(x){
   }
 # Mode
 my_mode <- function(x){
+    mymode = as.numeric(names(which(table(x) == max(table(x)))))
+    return(mymode)
   }
 
 # Range
 my_range <- function(x){
   myrange <- my_max(x) - my_min(x)
+  return(myrange)
 }
