@@ -44,8 +44,14 @@ my_mean <- function(x) {
 
 # Median
 my_median <- function(x){
-  
-  }
+  sorted <- sort(x, decreasing = FALSE)
+  length_sort <- length(sorted)
+  if (length_sort %% 2 == 0)
+    mymedian <- sorted[length_sort/2]
+  else (mymedian <- (sorted[((length_sort)/2) + 0.5] + (sorted[((length_sort)/2) - 0.5]))/2)
+  return(mymedian)
+} 
+
 # Mode
 my_mode <- function(x){
     mymode = as.numeric(names(which(table(x) == max(table(x)))))
