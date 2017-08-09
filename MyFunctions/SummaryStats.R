@@ -1,4 +1,10 @@
 # Summary Statistics Function
+my_summary <- function(x) {
+  sumstat <- data.frame(Min = my_min(x), Max = my_max(x), Mean = my_mean(x), 
+                        Median = my_median(x), Mode = my_mode(x), Range = my_range(x), 
+                        Variance = my_variance(x), StandardDev = my_stdev(x))
+  return(sumstat)
+  }
 
 #From sum.R, as I wanted to use my own function
 my_sum <- function(x) {
