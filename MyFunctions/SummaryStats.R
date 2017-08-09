@@ -63,3 +63,18 @@ my_range <- function(x){
   myrange <- my_max(x) - my_min(x)
   return(myrange)
 }
+
+#Variance
+my_variance <- function(x){
+  m <- my_mean(x)
+  numerator <- 0
+  for (i in x){
+    numerator <- ((i - m)^2) + numerator
+  }
+  return(numerator/(length(x)-1))
+}
+
+#Standard Dev
+my_stdev <- function(x){
+  stdev <- my_variance(x)^0.5
+}
